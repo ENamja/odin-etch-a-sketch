@@ -1,8 +1,19 @@
+.buttonContainer {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    height: 50px;
+}
+
+button {
+    margin: auto;
+}
+
 div.container {
     display: flex;
     flex-direction: column;
-    width: 75vw;
-    height: 75vw;
+    width: 50vw;
+    height: 50vw;
     margin: 0 auto;
     align-content: stretch;
 }
