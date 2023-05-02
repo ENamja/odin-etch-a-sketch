@@ -29,9 +29,6 @@ div.block {
     border-color: black;
     border-style: solid;
     border-width: 1px;
-    background-color: lightgray;
+    background-color: white;
 }
 
-.hover {
-    filter: brightness(85%);
-}

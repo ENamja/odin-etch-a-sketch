@@ -34,13 +34,26 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 document.addEventListener("mouseover", (event) => {
-    if (event.target.classList.contains("hover")) {
-        console.log(event.target.style);
-    }
-    else {
-        if (event.target.classList.contains("block")) {
-            event.target.classList.add("hover");
+    if (event.target.classList.contains("block")) {
+        prevColor = getComputedStyle(event.target).getPropertyValue("background-color");
+        fParentheses = prevColor.indexOf("(");
+        fComma = prevColor.indexOf(",");
+        sComma = prevColor.indexOf(",", fComma + 1);
+        sParentheses = prevColor.indexOf(")");
+        red = parseInt(prevColor.substring(fParentheses + 1, fComma));
+        green = parseInt(prevColor.substring(fComma + 1, sComma));
+        blue = parseInt(prevColor.substring(sComma + 1, sParentheses));
+        if (red == 30) {
+            red = 0;
+            green = 0;
+            blue = 0;
         }
+        else if (red > 30) {
+            red -= 25;
+            green -= 25;
+            blue -= 25;
+        }
+        event.target.style.backgroundColor = `rgb(${red},${green},${blue})`;
     }
 })
 
